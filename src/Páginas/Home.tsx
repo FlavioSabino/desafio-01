@@ -27,11 +27,8 @@ export function Home() {
   function handleToggleTaskDone(id: number) {
     const updatedTask = tasks.map(task => ({...task}))
 
-<<<<<<< HEAD
-    const taskToBeMarkedAsDone = updatedTask.find(task => task.id === id)
-=======
   const taskToBeMarkedAsDone = updatedTask.find(task => task.id === id)
->>>>>>> a9a7d34741685e8bb62766c9f0884d37a5dee147
+
 
     if(!taskToBeMarkedAsDone)
     return
