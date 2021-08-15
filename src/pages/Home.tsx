@@ -27,11 +27,8 @@ export function Home() {
   function handleToggleTaskDone(id: number) {
     const updatedTask = tasks.map(task => ({...task}))
 
-<<<<<<< HEAD
     const taskToBeMarkedAsDone = updatedTask.find(task => task.id === id)
-=======
-  const taskToBeMarkedAsDone = updatedTask.find(task => task.id === id)
->>>>>>> a9a7d34741685e8bb62766c9f0884d37a5dee147
+ 
 
     if(!taskToBeMarkedAsDone)
     return
@@ -41,9 +38,21 @@ export function Home() {
   }
 
   function handleRemoveTask(id: number) {
-    const updatedTask = tasks.filter(task => task.id !== id )
+    Alert.alert('Remover item','Tem certeza que você deseja remover esse item?',[
+      {
+          style: 'cancel',
+          text: 'não'
+      },
+      {
+        style: 'destructive',
+        text: 'sim',
+        onPress: () => {
+          const updatedTask = tasks.filter(task => task.id !== id )
 
-    setTasks(updatedTask)
+          setTasks(updatedTask)
+        }
+      }
+    ])
   }
 
   return (
